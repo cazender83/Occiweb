@@ -6,7 +6,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ URL::route('recettes.create') }}">nouvelle recette <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ URL::route('utilisateurs.create') }}">creation de compte <span class="sr-only">(current)</span></a>
+            </li>
         </ul>
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="margin-right:5%">

@@ -7,6 +7,7 @@
             <div class="progress-bar w-100 bg-dark" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <div style="padding-top: 25px">
+            <a href="{{ route("recettes.edit", $recette->id) }}" class="btn btn-info">Edit</a>
             <h1>{{ $recette->titre }}</h1>
             <video controls poster="images/{{ $recette->image }}" width="900">
                 <source src="video/{{ $recette->video }}" type="video/mp4">

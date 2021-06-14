@@ -25,7 +25,7 @@ class RecetteController extends Controller
      */
     public function create()
     {
-        //
+        return view('recettes.create');
     }
 
     /**
@@ -36,7 +36,22 @@ class RecetteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $titre = $request->input('titre');
+        $progression = $request->input('progression');
+        $remarque = $request->input('remarque');
+        $etape = $request->input('etape');
+        $video = $request->input('video');
+        $image = $request->input('image');
+
+        $recette = new Recette;
+        $recette->titre = $titre;
+        $recette->progression = $progression;
+        $recette->remarque = $remarque;
+        $recette->etape = $etape;
+        $recette->video = $video;
+        $recette->image = $image;
+        $recette->save();
+        return redirect()->route('recettes.index');
     }
 
     /**
@@ -57,9 +72,10 @@ class RecetteController extends Controller
      * @param  \App\Models\Recette  $recette
      * @return \Illuminate\Http\Response
      */
-    public function edit(Recette $recette)
+    public function edit($id)
     {
-        //
+        $recettes = recette::findOrFail($id);
+        return view('recettes.edit', compact('recettes'));
     }
 
     /**
@@ -69,9 +85,24 @@ class RecetteController extends Controller
      * @param  \App\Models\Recette  $recette
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recette $recette)
+    public function update(Request $request, $id)
     {
-        //
+        $titre = $request->input('titre');
+        $progression = $request->input('progression');
+        $remarque = $request->input('remarque');
+        $etape = $request->input('etape');
+        $video = $request->input('video');
+        $image = $request->input('image');
+
+        $recette = Recette::findOrFail($id);
+        $recette->titre = $titre;
+        $recette->progression = $progression;
+        $recette->remarque = $remarque;
+        $recette->etape = $etape;
+        $recette->video = $video;
+        $recette->image = $image;
+        $recette->update();
+        return redirect()->route('recettes.index');
     }
 
     /**

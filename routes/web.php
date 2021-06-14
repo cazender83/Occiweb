@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('recettes', 'App\Http\Controllers\RecetteController');
 Route::resource('articles', 'App\Http\Controllers\ArticleController');
+Route::resource('utilisateurs', 'App\Http\Controllers\UtilisateurController');
 
 Route::get('/', function () {
     return view('welcome');
