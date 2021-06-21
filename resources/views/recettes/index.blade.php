@@ -3,7 +3,7 @@
 @section('page-content')
 
 
-    <div class="container">
+    <div class="recettes" class="container">
         <img src="../../images/logo_index.jpg" alt="font-index">
     </div>
     <div class="container">

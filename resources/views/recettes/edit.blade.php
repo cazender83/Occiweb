@@ -3,7 +3,7 @@
 @section('page-content')
 
 
-    <div class="container">
+    <div class="recettes" class="container">
         <h1>modification d'une recette</h1>
         <div style="padding-top: 25px">
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recette;
+use App\Models\Utilisateur;
 use Illuminate\Http\Request;
 
 class RecetteController extends Controller
@@ -114,5 +115,14 @@ class RecetteController extends Controller
     public function destroy(Recette $recette)
     {
         //
+    }
+
+    public function searchR(Request $request)
+    {
+        $name = $request ->input('search');
+        $recettes = Recette::where('titre','like','%'.$name.'%')->get();
+        $utilisateurs = Utilisateur::where('username','like','%'.$name.'%')->orWhere('email', 'like', '%' . $name . '%')->get();
+
+        return view('articles.search', compact('recettes', 'utilisateurs','name'));
     }
 }

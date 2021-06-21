@@ -1,11 +1,13 @@
 @extends('layout')
 
 @section('page-content')
-    <div>
+    <div class="recettes">
         <h1>Detail de la recette</h1>
+
         <div class="progress" style="height: 1px;" >
             <div class="progress-bar w-100 bg-dark" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
+
         <div style="padding-top: 25px">
             <a href="{{ route("recettes.edit", $recette->id) }}" class="btn btn-info">Edit</a>
             <h1>{{ $recette->titre }}</h1>

@@ -1,14 +1,15 @@
+@extends('footer')
 @extends('layout')
 
 @section('page-content')
 
 
-    <div class="container">
-        <h1>ajout d'une recette</h1>
-        <div style="padding-top: 25px">
+    <div class="recettes" class="container">
+        <h1 class="title">AJOUTER UNE RECETTE</h1>
+        <div class="form">
             <form method="post" action="{{ route('recettes.store') }}">
                 @csrf
-                <div class="card border-dark " style="width: 40%;">
+                <div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <label>Titre de la recette:</label><br>
@@ -23,7 +24,7 @@
                             <textarea name="remarque" rows="5" cols="30" ></textarea>
                         </li>
                         <li class="list-group-item">
-                            <label>Etapes</label><br>
+                            <label>Etapes:</label><br>
                             <textarea name="etape" rows="5" cols="30" ></textarea>
                         </li>
                         <li class="list-group-item">
@@ -35,9 +36,8 @@
                             <input type="text" name="image" required="required">
                         </li>
                         <li class="list-group-item">
-                            <button type="submit" class="btn btn-primary">ajouter</button>
+                            <button type="submit" class="btn btn-dark">Ajouter</button>
                         </li>
-
                     </ul>
                 </div>
             </form>

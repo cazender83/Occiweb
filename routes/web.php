@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('articles/searchR', 'App\Http\Controllers\RecetteController@searchR')->name('articles.searchR');
+
 Route::resource('recettes', 'App\Http\Controllers\RecetteController');
 Route::resource('articles', 'App\Http\Controllers\ArticleController');
 Route::resource('utilisateurs', 'App\Http\Controllers\UtilisateurController');
