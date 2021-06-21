@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recette extends Model
 {
-    use HasFactory;
+    public function ingredient()
+    {
+        return $this->belongsToMany('App\Models\ingredient')->withPivot('quantite');
+    }
 }

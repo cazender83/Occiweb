@@ -22,14 +22,18 @@
                         <tr>
                             <th>ingredient</th>
                             <th>nom</th>
+                            <th>quantites</th>
+                            <th>grammage</th>
 
                         </tr>
                         </thead>
                         <tbody>
-                       {{-- @foreach($ingredients as $ingredient)
+                        @foreach($recette->ingredient as $ingredient)
                         <tr>
                             <td>{{ $ingredient->image }}</td>
                             <td>{{ $ingredient->nom }}</td>
+                            <td>{{ $ingredient->pivot->quantite }}</td>
+                            <td>{{ $ingredient->desi_qt }}</td>
 
 
 
@@ -37,7 +41,7 @@
 
                             </td>
                         </tr>
-                        @endforeach--}}
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
