@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recette;
 use App\Models\Utilisateur;
+use App\Models\Ingredient;
 use Illuminate\Http\Request;
 
 class RecetteController extends Controller
@@ -121,8 +122,9 @@ class RecetteController extends Controller
     {
         $name = $request ->input('search');
         $recettes = Recette::where('titre','like','%'.$name.'%')->get();
+        $ingredients = Ingredient::where('nom','like','%'.$name.'%')->get();
         $utilisateurs = Utilisateur::where('username','like','%'.$name.'%')->orWhere('email', 'like', '%' . $name . '%')->get();
 
-        return view('articles.search', compact('recettes', 'utilisateurs','name'));
+        return view('articles.search', compact('recettes', 'utilisateurs', 'ingredients','name'));
     }
 }

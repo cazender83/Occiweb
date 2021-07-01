@@ -19,6 +19,7 @@ Route::resource('recettes', 'App\Http\Controllers\RecetteController');
 Route::resource('articles', 'App\Http\Controllers\ArticleController');
 Route::resource('utilisateurs', 'App\Http\Controllers\UtilisateurController');
 Route::resource('ingredients', 'App\Http\Controllers\IngredientController');
+Route::resource('gallery', 'App\Http\Controllers\GalleryController');
 
 Route::get('/', function () {
     return view('welcome');
