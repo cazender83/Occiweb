@@ -4,9 +4,9 @@
 
 
     <div class="container">
-        <h1>Gallery Animaux</h1>
+        <h1>Gallery Animaux <a href="{{ route("gallery.show", "animaux") }}" class="btn btn-warning">Voir la Gallery</a></h1>
         <div>
-            <div id="carouselExampleIndicators" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
+            <div id="carouselIndicatorsAnimal" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach($animauxFirst as $animalFirst)
                         <div class="carousel-item active">
@@ -19,11 +19,11 @@
                         </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselIndicatorsAnimal" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselIndicatorsAnimal" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -33,9 +33,9 @@
     </div>
 
     <div class="container">
-        <h1>Gallery Architecture</h1>
+        <h1>Gallery Architecture <a href="{{ route("gallery.show", "architecture") }}" class="btn btn-warning">Voir la Gallery</a></h1>
         <div>
-            <div id="carouselExampleIndicators" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
+            <div id="carouselIndicatorsArchitecture" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach($architectureFirst as $archiFirst)
                         <div class="carousel-item active">
@@ -48,11 +48,11 @@
                         </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselIndicatorsArchitecture" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselIndicatorsArchitecture" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -62,9 +62,9 @@
     </div>
 
     <div class="container">
-        <h1>Gallery Divers</h1>
+        <h1>Gallery Divers <a href="{{ route("gallery.show", "divers") }}" class="btn btn-warning">Voir la Gallery</a></h1>
         <div>
-            <div id="carouselExampleIndicators" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
+            <div id="carouselIndicatorsDivers" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach($diversFirst as $diverFirst)
                         <div class="carousel-item active">
@@ -77,11 +77,11 @@
                         </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselIndicatorsDivers" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselIndicatorsDivers" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -91,9 +91,9 @@
     </div>
 
     <div class="container">
-        <h1>Gallery Fleurs</h1>
+        <h1>Gallery Fleurs <a href="{{ route("gallery.show", "fleurs") }}" class="btn btn-warning">Voir la Gallery</a></h1>
         <div>
-            <div id="carouselExampleIndicators" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
+            <div id="carouselIndicatorsFleurs" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach($fleursFirst as $fleurFirst)
                         <div class="carousel-item active">
@@ -106,11 +106,11 @@
                         </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselIndicatorsFleurs" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselIndicatorsFleurs" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -120,9 +120,9 @@
     </div>
 
     <div class="container">
-        <h1>Gallery Mer</h1>
+        <h1>Gallery Mer <a href="{{ route("gallery.show", "mer") }}" class="btn btn-warning">Voir la Gallery</a></h1>
         <div>
-            <div id="carouselExampleIndicators" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
+            <div id="carouselIndicatorsMer" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach($merFirst as $meFirst)
                         <div class="carousel-item active">
@@ -135,11 +135,11 @@
                         </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselIndicatorsMer" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselIndicatorsMer" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -149,9 +149,9 @@
     </div>
 
     <div class="container">
-        <h1>Gallery Animaux</h1>
+        <h1>Gallery Nature <a href="{{ route("gallery.show", "nature") }}" class="btn btn-warning">Voir la Gallery</a></h1>
         <div>
-            <div id="carouselExampleIndicators" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
+            <div id="carouselIndicatorsNature" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach($natureFirst as $natuFirst)
                         <div class="carousel-item active">
@@ -164,11 +164,11 @@
                         </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselIndicatorsNature" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselIndicatorsNature" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -178,9 +178,9 @@
     </div>
 
     <div class="container">
-        <h1>Gallery Motos</h1>
+        <h1>Gallery Motos <a href="{{ route("gallery.show", "motos") }}" class="btn btn-warning">Voir la Gallery</a></h1>
         <div>
-            <div id="carouselExampleIndicators" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
+            <div id="carouselIndicatorsMotos" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach($motosFirst as $motoFirst)
                         <div class="carousel-item active">
@@ -193,11 +193,11 @@
                         </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselIndicatorsMotos" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselIndicatorsMotos" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -207,9 +207,9 @@
     </div>
 
     <div class="container">
-        <h1>Gallery Voitures</h1>
+        <h1>Gallery Voitures <a href="{{ route("gallery.show", "voiture") }}" class="btn btn-warning">Voir la Gallery</a></h1>
         <div>
-            <div id="carouselExampleIndicators" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
+            <div id="carouselIndicatorsVoiture" class="carousel slide col w-100 p-0 mt-5" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach($voituresFirst as $voitureFirst)
                         <div class="carousel-item active">
@@ -222,11 +222,11 @@
                         </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselIndicatorsVoiture" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselIndicatorsVoiture" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>

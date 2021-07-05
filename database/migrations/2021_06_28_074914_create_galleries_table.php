@@ -17,6 +17,7 @@ class CreateGalleriesTable extends Migration
             $table->increments('id');
             $table->string('image', 100);
             $table->string('alt', 100);
+            $table->string('categorie', 100);
 
 
             $table->timestamps();

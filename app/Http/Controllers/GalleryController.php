@@ -14,22 +14,22 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $animauxFirst = Gallery::where('image','like','%animaux%')->limit(1)->get();
-        $animaux = Gallery::where('image','like','%animaux%')->skip(1)->limit(100)->get();
-        $architectureFirst = Gallery::where('image','like','%architecture%')->limit(1)->get();
-        $architecture = Gallery::where('image','like','%architecture%')->get();
-        $diversFirst = Gallery::where('image','like','%divers%')->limit(1)->get();
-        $divers = Gallery::where('image','like','%divers%')->get();
-        $fleursFirst = Gallery::where('image','like','%fleurs%')->limit(1)->get();
-        $fleurs = Gallery::where('image','like','%fleurs%')->get();
-        $merFirst = Gallery::where('image','like','%mer%')->limit(1)->get();
-        $mer = Gallery::where('image','like','%mer%')->get();
-        $motosFirst = Gallery::where('image','like','%motos%')->limit(1)->get();
-        $motos = Gallery::where('image','like','%motos%')->get();
-        $natureFirst = Gallery::where('image','like','%nature%')->limit(1)->get();
-        $nature = Gallery::where('image','like','%nature%')->get();
-        $voituresFirst = Gallery::where('image','like','%voitures%')->limit(1)->get();
-        $voitures = Gallery::where('image','like','%voitures%')->get();
+        $animauxFirst = Gallery::where('categorie','like','%animaux%')->limit(1)->get();
+        $animaux = Gallery::where('categorie','like','%animaux%')->skip(1)->limit(100)->get();
+        $architectureFirst = Gallery::where('categorie','like','%architecture%')->limit(1)->get();
+        $architecture = Gallery::where('categorie','like','%architecture%')->skip(1)->limit(100)->get();
+        $diversFirst = Gallery::where('categorie','like','%divers%')->limit(1)->get();
+        $divers = Gallery::where('categorie','like','%divers%')->skip(1)->limit(100)->get();
+        $fleursFirst = Gallery::where('categorie','like','%fleurs%')->limit(1)->get();
+        $fleurs = Gallery::where('categorie','like','%fleurs%')->skip(1)->limit(100)->get();
+        $merFirst = Gallery::where('categorie','like','%mer%')->limit(1)->get();
+        $mer = Gallery::where('categorie','like','%mer%')->skip(1)->limit(100)->get();
+        $motosFirst = Gallery::where('categorie','like','%motos%')->limit(1)->get();
+        $motos = Gallery::where('categorie','like','%motos%')->skip(1)->limit(100)->get();
+        $natureFirst = Gallery::where('categorie','like','%nature%')->limit(1)->get();
+        $nature = Gallery::where('categorie','like','%nature%')->skip(1)->limit(100)->get();
+        $voituresFirst = Gallery::where('categorie','like','%voitures%')->limit(1)->get();
+        $voitures = Gallery::where('categorie','like','%voitures%')->skip(1)->limit(100)->get();
         return view('gallery.index', compact('animauxFirst','animaux', 'architectureFirst','architecture', 'divers', 'diversFirst', 'fleurs',  'fleursFirst', 'mer', 'merFirst', 'motos', 'motosFirst', 'nature', 'natureFirst', 'voitures', 'voituresFirst'));
     }
 
@@ -40,7 +40,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('gallery.create');
     }
 
     /**
@@ -51,7 +51,16 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image = $request->input('image');
+        $alt = $request->input('alt');
+        $categorie = $request->input('categorie');
+
+        $picture = new Gallery;
+        $picture->image = $image;
+        $picture->alt = $alt;
+        $picture->categorie = $categorie;
+        $picture->save();
+        return redirect()->route('gallery.index');
     }
 
     /**
@@ -60,9 +69,10 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $gallery)
+    public function show($name)
     {
-        //
+        $pictures = Gallery::where('categorie','like','%'.$name.'%')->get();
+        return view('gallery.show', compact('pictures'));
     }
 
     /**
