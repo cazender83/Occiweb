@@ -22,7 +22,7 @@
                 @foreach($ingredients as $ingredient)
                     <tr>
                         <td>{{ $ingredient->nom }}</td>
-                        <td>{{ $ingredient->image }}</td>
+                        <td><img src="{{ URL::to('/images/ingredient/'.$ingredient->image) }}" height="60" width="60" ></td>
                         <td>{{ $ingredient->desi_qt }}</td>
                         <td class="d-flex justify-content-around">
                             <a href="{{ route("ingredients.edit", $ingredient->id) }}" class="btn btn-warning">edit</a>

@@ -53,7 +53,11 @@ class RecetteController extends Controller
         $recette->video = $video;
         $recette->image = $image;
         $recette->save();
-        return redirect()->route('recettes.index');
+
+        $recettes = Recette::where('titre','like','%'.$titre.'%')->get();
+        $ingredients = Ingredient::get()->all();
+
+        return view('ingredients.addIngredients', compact('recettes', 'ingredients'));
     }
 
     /**

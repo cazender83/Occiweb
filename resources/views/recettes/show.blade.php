@@ -30,7 +30,7 @@
                         <tbody>
                         @foreach($recette->ingredient as $ingredient)
                         <tr>
-                            <td>{{ $ingredient->image }}</td>
+                            <td><img src="{{ URL::to('/images/ingredient/'.$ingredient->image) }}" height="60" width="60" ></td>
                             <td>{{ $ingredient->nom }}</td>
                             <td>{{ $ingredient->pivot->quantite }}</td>
                             <td>{{ $ingredient->desi_qt }}</td>

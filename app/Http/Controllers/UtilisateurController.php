@@ -112,4 +112,23 @@ class UtilisateurController extends Controller
     {
         //
     }
+
+    public function connection(Request $request)
+    {
+        $username = $request ->input('username');
+        $password = $request ->input('password');
+
+        $account = Utilisateur::where('username','=',$username)->Where('password', '=', $password)->get();
+        return view('utilisateurs.connected', compact('account'));
+    }
+
+    public function connect()
+    {
+        return view('utilisateurs.connexion');
+    }
+
+    public function deconnect()
+    {
+        return view('utilisateurs.deconnect');
+    }
 }

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ingredient;
+use App\Models\Recette;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IngredientController extends Controller
 {
@@ -36,6 +38,7 @@ class IngredientController extends Controller
      */
     public function store(Request $request)
     {
+        $ingredient_it = 1;
         $nom = $request->input('nom');
         $image = $request->input('image');
         $desi_qt = $request->input('grammage');
@@ -102,5 +105,22 @@ class IngredientController extends Controller
     public function destroy(Ingredient $ingredient)
     {
         //
+    }
+
+    public function addInRecette(Request $request, $id)
+    {
+        $ingredient_it = $request->input('ingredient');
+
+        $value = count($ingredient_it);
+        $recette = Recette::findOrFail($id);
+
+        $temp = 0;
+        while ($temp < $value) {
+            $ingredient = Ingredient::findOrFail($ingredient_it[$temp]);
+            $recette->ingredient()->attach($ingredient, ['quantite' => $request->input($ingredient->id)]);
+            $temp = $temp + 1;
+        }
+
+        return redirect()->route('recettes.index');
     }
 }

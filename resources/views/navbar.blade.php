@@ -9,9 +9,21 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ URL::route('recettes.create') }}">NOUVELLE RECETTE <span class="sr-only">(current)</span></a>
             </li>
+            <?php if(session()->has('users'))
+            {
+            $idu = session('users');
+            ?>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ URL::route('utilisateurs.create') }}">CREATION DE COMPTE <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ URL::route('utilisateurs.deconnect',$idu) }}">Deconnection <span class="sr-only">(current)</span></a>
             </li>
+            <?php }  else { ?>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ URL::route('utilisateurs.connect') }}">Connexion <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ URL::route('utilisateurs.create') }}">s'inscrire <span class="sr-only">(current)</span></a>
+            </li>
+            <?php } ?>
         </ul>
 
         <form class="d-flex" method="post" action="{{ URL::route('articles.searchR') }}">
